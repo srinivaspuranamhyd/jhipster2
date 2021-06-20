@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "RbacUserStatus": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE",
+      "LOCKED": "LOCKED"
+    }
+  }
+}

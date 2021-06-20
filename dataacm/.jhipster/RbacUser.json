@@ -1,0 +1,75 @@
+{
+  "name": "RbacUser",
+  "fields": [
+    {
+      "fieldName": "onebankId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lanId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "RbacUserStatus",
+      "fieldValues": "ACTIVE,INACTIVE,LOCKED",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "managerId",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "rbacPolicy",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "policy"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "rbacPermission",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "permission"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "rbacSecurityGroup",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "group",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "rbac_user",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620165051"
+}

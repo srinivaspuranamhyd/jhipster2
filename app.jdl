@@ -1,0 +1,111 @@
+application {
+  config {
+    baseName gateway 
+    reactive true 
+    packageName com.dbs.itt.security
+    applicationType gateway
+    authenticationType oauth2 
+    buildTool maven 
+    clientFramework react 
+    devDatabaseType mariadb
+    prodDatabaseType mariadb
+    cacheProvider redis
+    serviceDiscoveryType eureka
+    testFrameworks [cypress] 
+    jhiPrefix rbac
+  }
+  entities RbacUser, RbacSecurityGroup, RbacAttribute, RbacAttributeVal, RbacPolicy, RbacPermission, RbacDataAccess, RbacPermissionApproval
+}
+
+application {
+  config {
+    baseName dataacm
+    reactive true
+    packageName com.dbs.itt.security
+    applicationType microservice 
+    authenticationType oauth2
+    buildTool maven
+    devDatabaseType mariadb
+    prodDatabaseType mariadb
+    cacheProvider redis
+    enableHibernateCache false
+    serverPort 8081
+    serviceDiscoveryType eureka
+    jhiPrefix rbac
+  }
+  entities RbacUser, RbacSecurityGroup, RbacAttribute, RbacAttributeVal, RbacPolicy, RbacPermission, RbacDataAccess, RbacPermissionApproval
+}
+
+entity RbacAttributeVal {
+  @Id id Long required
+  value String required
+}
+entity RbacAttribute {
+  @Id id Long required
+  name String required
+  type String required
+}
+entity RbacUser {
+  onebankId String required
+  lanId String required
+  email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+  status RbacUserStatus required
+  department String required
+  country String required
+  managerId String
+}
+enum RbacUserStatus {
+    ACTIVE, INACTIVE, LOCKED
+}
+entity RbacSecurityGroup {
+  name String required
+  desc String required 
+}
+entity RbacPermission {
+  @Id id Long required
+  name String required
+  desc String required  
+}
+entity RbacPermissionApproval {
+  @Id id Long required
+  desc String required
+  approverEmail String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+  status RbacPermissionApprovalStatus required
+}
+enum RbacPermissionApprovalStatus {
+    APPROVED, PENDING, REJECTED
+}
+entity RbacPolicy {
+  @Id id Long required
+  name String required
+  desc String required
+}
+entity RbacDataAccess {
+  @Id id Long required
+  name String required
+  desc String required
+}
+relationship OneToMany {
+  RbacAttribute{attrval} to RbacAttributeVal{attr}
+  RbacUser{policy} to RbacPolicy{user}
+  RbacUser{permission} to RbacPermission{user}
+  RbacPolicy{attr} to RbacAttribute
+  RbacPermission{attr} to RbacAttribute
+}
+relationship ManyToMany {
+  RbacUser{group} to RbacSecurityGroup{user}
+  RbacSecurityGroup{dataTopic} to RbacDataAccess{group}
+}
+relationship OneToOne {
+  RbacPermission{approval} to RbacPermissionApproval{permission}
+}
+
+service * with serviceImpl
+paginate * with pagination
+microservice * with dataacm
+
+deployment { 
+  deploymentType openshift
+  appsFolders [gateway, dataacm]
+  dockerRepositoryName "mraible"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "RbacDataAccess",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "desc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "rbacSecurityGroup",
+      "otherEntityRelationshipName": "dataTopic",
+      "relationshipName": "group",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "rbac_data_access",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620164551"
+}

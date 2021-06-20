@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "dataacmRbacAttribute": {
+      "home": {
+        "title": "Rbac Attributes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Attribute",
+        "createOrEditLabel": "Create or edit a Rbac Attribute",
+        "notFound": "No Rbac Attributes found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Attribute {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Attribute"
+      },
+      "id": "Id",
+      "name": "Name",
+      "type": "Type",
+      "attrval": "Attrval",
+      "rbacPolicy": "Rbac Policy",
+      "rbacPermission": "Rbac Permission"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacAttribute": {
+      "created": "A new Rbac Attribute is created with identifier {{ param }}",
+      "updated": "A Rbac Attribute is updated with identifier {{ param }}",
+      "deleted": "A Rbac Attribute is deleted with identifier {{ param }}"
+    }
+  }
+}

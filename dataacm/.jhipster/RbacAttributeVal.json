@@ -1,0 +1,39 @@
+{
+  "name": "RbacAttributeVal",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rbacAttribute",
+      "otherEntityRelationshipName": "attrval",
+      "relationshipName": "attr"
+    }
+  ],
+  "entityTableName": "rbac_attribute_val",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620164451"
+}

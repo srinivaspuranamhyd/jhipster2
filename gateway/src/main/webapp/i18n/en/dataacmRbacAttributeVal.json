@@ -1,0 +1,29 @@
+{
+  "gatewayApp": {
+    "dataacmRbacAttributeVal": {
+      "home": {
+        "title": "Rbac Attribute Vals",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Attribute Val",
+        "createOrEditLabel": "Create or edit a Rbac Attribute Val",
+        "notFound": "No Rbac Attribute Vals found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Attribute Val {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Attribute Val"
+      },
+      "id": "Id",
+      "value": "Value",
+      "attr": "Attr"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacAttributeVal": {
+      "created": "A new Rbac Attribute Val is created with identifier {{ param }}",
+      "updated": "A Rbac Attribute Val is updated with identifier {{ param }}",
+      "deleted": "A Rbac Attribute Val is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "RbacPermissionApproval",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "desc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "approverEmail",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "RbacPermissionApprovalStatus",
+      "fieldValues": "APPROVED,PENDING,REJECTED",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "rbacPermission",
+      "otherEntityRelationshipName": "approval",
+      "relationshipName": "permission",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "rbac_permission_approval",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620164751"
+}

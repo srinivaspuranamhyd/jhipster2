@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity RbacPermission.
+    -->
+    <changeSet id="20210620164651-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="approval_id"
+                                 baseTableName="rbac_permission"
+                                 constraintName="fk_rbac_permission__approval_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rbac_permission_approval"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="rbac_permission"
+                                 constraintName="fk_rbac_permission__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rbac_user"/>
+    </changeSet>
+</databaseChangeLog>

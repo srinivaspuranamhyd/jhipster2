@@ -1,0 +1,30 @@
+{
+  "gatewayApp": {
+    "dataacmRbacDataAccess": {
+      "home": {
+        "title": "Rbac Data Accesses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Data Access",
+        "createOrEditLabel": "Create or edit a Rbac Data Access",
+        "notFound": "No Rbac Data Accesses found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Data Access {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Data Access"
+      },
+      "id": "Id",
+      "name": "Name",
+      "desc": "Desc",
+      "group": "Group"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacDataAccess": {
+      "created": "A new Rbac Data Access is created with identifier {{ param }}",
+      "updated": "A Rbac Data Access is updated with identifier {{ param }}",
+      "deleted": "A Rbac Data Access is deleted with identifier {{ param }}"
+    }
+  }
+}

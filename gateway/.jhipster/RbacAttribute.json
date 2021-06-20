@@ -1,0 +1,56 @@
+{
+  "name": "RbacAttribute",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "rbacAttributeVal",
+      "otherEntityRelationshipName": "attr",
+      "relationshipName": "attrval"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rbacPolicy",
+      "otherEntityRelationshipName": "attr",
+      "relationshipName": "rbacPolicy"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rbacPermission",
+      "otherEntityRelationshipName": "attr",
+      "relationshipName": "rbacPermission"
+    }
+  ],
+  "entityTableName": "rbac_attribute",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620164351"
+}

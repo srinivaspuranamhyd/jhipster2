@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "dataacmRbacSecurityGroup": {
+      "home": {
+        "title": "Rbac Security Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Security Group",
+        "createOrEditLabel": "Create or edit a Rbac Security Group",
+        "notFound": "No Rbac Security Groups found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Security Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Security Group"
+      },
+      "id": "ID",
+      "name": "Name",
+      "desc": "Desc",
+      "dataTopic": "Data Topic",
+      "user": "User"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacSecurityGroup": {
+      "created": "A new Rbac Security Group is created with identifier {{ param }}",
+      "updated": "A Rbac Security Group is updated with identifier {{ param }}",
+      "deleted": "A Rbac Security Group is deleted with identifier {{ param }}"
+    }
+  }
+}

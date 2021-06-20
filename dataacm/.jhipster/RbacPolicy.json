@@ -1,0 +1,50 @@
+{
+  "name": "RbacPolicy",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "desc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "rbacAttribute",
+      "otherEntityRelationshipName": "rbacPolicy",
+      "relationshipName": "attr"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rbacUser",
+      "otherEntityRelationshipName": "policy",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "rbac_policy",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["gateway", "dataacm"],
+  "microserviceName": "dataacm",
+  "clientRootFolder": "dataacm",
+  "databaseType": "sql",
+  "changelogDate": "20210620164851"
+}

@@ -1,0 +1,17 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "openshift",
+    "gatewayType": "SpringCloudGateway",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["gateway", "dataacm"],
+    "clusteredDbApps": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "mraible",
+    "dockerPushCommand": "docker push",
+    "openshiftNamespace": "default",
+    "storageType": "ephemeral",
+    "jwtSecretKey": "MzJhNmM1MmMzOTNiZTFlZGM2ZmI2M2ZkMWJhY2VjYTk1YmFhYjFlZDQzMGMxYzViMzczYzg2N2YzMTFmOTA1NGE1OTNjYmFmMzM4MDFiNGZhOTFiZjQ5ZjVlYjA5ZjRjYzU0Mg==",
+    "registryReplicas": 2
+  }
+}

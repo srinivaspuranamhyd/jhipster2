@@ -1,0 +1,37 @@
+{
+  "gatewayApp": {
+    "dataacmRbacUser": {
+      "home": {
+        "title": "Rbac Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac User",
+        "createOrEditLabel": "Create or edit a Rbac User",
+        "notFound": "No Rbac Users found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac User {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac User"
+      },
+      "id": "ID",
+      "onebankId": "Onebank Id",
+      "lanId": "Lan Id",
+      "email": "Email",
+      "status": "Status",
+      "department": "Department",
+      "country": "Country",
+      "managerId": "Manager Id",
+      "policy": "Policy",
+      "permission": "Permission",
+      "group": "Group"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacUser": {
+      "created": "A new Rbac User is created with identifier {{ param }}",
+      "updated": "A Rbac User is updated with identifier {{ param }}",
+      "deleted": "A Rbac User is deleted with identifier {{ param }}"
+    }
+  }
+}

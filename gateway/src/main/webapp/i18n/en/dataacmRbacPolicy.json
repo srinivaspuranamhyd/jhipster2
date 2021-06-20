@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "dataacmRbacPolicy": {
+      "home": {
+        "title": "Rbac Policies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Policy",
+        "createOrEditLabel": "Create or edit a Rbac Policy",
+        "notFound": "No Rbac Policies found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Policy {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Policy"
+      },
+      "id": "Id",
+      "name": "Name",
+      "desc": "Desc",
+      "attr": "Attr",
+      "user": "User"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacPolicy": {
+      "created": "A new Rbac Policy is created with identifier {{ param }}",
+      "updated": "A Rbac Policy is updated with identifier {{ param }}",
+      "deleted": "A Rbac Policy is deleted with identifier {{ param }}"
+    }
+  }
+}

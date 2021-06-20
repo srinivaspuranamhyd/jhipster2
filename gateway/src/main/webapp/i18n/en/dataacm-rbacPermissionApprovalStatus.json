@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "RbacPermissionApprovalStatus": {
+      "null": "",
+      "APPROVED": "APPROVED",
+      "PENDING": "PENDING",
+      "REJECTED": "REJECTED"
+    }
+  }
+}

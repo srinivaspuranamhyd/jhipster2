@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "dataacmRbacPermission": {
+      "home": {
+        "title": "Rbac Permissions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rbac Permission",
+        "createOrEditLabel": "Create or edit a Rbac Permission",
+        "notFound": "No Rbac Permissions found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Rbac Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Rbac Permission"
+      },
+      "id": "Id",
+      "name": "Name",
+      "desc": "Desc",
+      "approval": "Approval",
+      "attr": "Attr",
+      "user": "User"
+    }
+  },
+  "dataacmApp": {
+    "dataacmRbacPermission": {
+      "created": "A new Rbac Permission is created with identifier {{ param }}",
+      "updated": "A Rbac Permission is updated with identifier {{ param }}",
+      "deleted": "A Rbac Permission is deleted with identifier {{ param }}"
+    }
+  }
+}

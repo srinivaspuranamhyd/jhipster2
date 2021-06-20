@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity RbacSecurityGroup.
+    -->
+    <changeSet id="20210620164951-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="rbac_security_group_id"
+                                 baseTableName="rel_rbac_security_group__data_topic"
+                                 constraintName="fk_rel_rbac_security_group__data_topic__rbac_security_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rbac_security_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="data_topic_id"
+                                 baseTableName="rel_rbac_security_group__data_topic"
+                                 constraintName="fk_rel_rbac_security_group__data_topic__data_topic_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rbac_data_access"/>
+    </changeSet>
+</databaseChangeLog>
